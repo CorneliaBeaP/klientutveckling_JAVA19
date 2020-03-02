@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<ol id="breeds"></ol>
+<div id="demo"></div>
+<a href="" id="demo2"></a>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            let $dog = $.getJSON("https://dog.ceo/api/breeds/image/random", function(response){
+                $("#demo").append('<img src="' + response.message + '"</>');
+                
+            })
+
+            // $.getJSON("https://dog.ceo/api/breeds/list/all"
+            // , function (data) {
+            //     $.each(data.message, function (index, array){
+            //         $("#breeds").append("<li>" + index + "</li>");
+            //     });
+            // });
+        });
+
+
+
+    </script>
+</body>
+
+</html>

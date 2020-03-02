@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+<script>
+
+//Synkron Callback
+console.log('START');
+let array = ['A', 'B', 'C'];
+
+console.log(array);
+array.forEach(function(element){
+    console.log(element);
+});
+
+console.log('FINNISH');
+
+
+//Asynkron callback 
+console.log('START');
+
+setTimeout(function(){
+for(let el of array){
+    console.log(el);
+}
+}, 1000);
+
+console.log('FINNISH');
+
+</script>
+
+    
+</body>
+</html>

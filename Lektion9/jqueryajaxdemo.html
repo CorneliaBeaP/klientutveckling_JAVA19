@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="output"></div>
+    <div id="output2"></div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#output').load('demo.txt', function (response, status, xhr) {
+                console.log(response);
+                console.log(status);
+                console.log(xhr);
+            });
+
+
+            $.getJSON("demo.json"
+            , function (response) {
+                console.log(response);
+                $("#output2").html(response.name + '<br>' +
+                    response.phone);
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>

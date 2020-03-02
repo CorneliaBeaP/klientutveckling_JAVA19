@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="demo1"></div>
+<div id="minutkostnad">Du ringer för <span id="minkost"></span> kr i månaden.</div>
+<div> Pris för varan utan moms: <span id="priceExVat"></span></div>
+<div> Momsen: <span id="moms"></span></div>
+    <script>
+
+//let number1 = +prompt("Ange det första talet");
+//let number2 = +prompt("Ange det andra talet");
+//alert((number1+number2)/2);
+
+//let courses = ["Java", "Backend", "Klientutveckling", "Analys & design"];
+//courses.sort();
+//console.log(courses);
+//console.log(courses.length);
+
+
+/*function hej(msg = "Welcome"){
+    alert("hej från funktion")
+    console.log(msg);
+
+    document.getElementById('demo1').innerHTML = msg;
+}*/
+
+function hejNamn(firstName = "", lastName =""){
+     return("Hej " + firstName + " " + lastName);
+
+}
+
+let first = prompt("Vad är ditt förnamn?");
+let last = prompt("Vad är ditt efternamn?");
+document.getElementById('demo1').innerHTML = hejNamn(first, last);
+
+
+function costPerMonth(minutes, costPerMinute){
+    return minutes*costPerMinute;
+}
+
+
+let minutes = +prompt("Hur många minuter ringer du?");
+let cost = +prompt("Hur mycket kostar det per minut?");
+document.getElementById('minkost').innerHTML = costPerMonth(minutes, cost);
+
+
+/*function getSize(width, height, depth){
+    let area = width * height;
+    let volume = width * height * depth;
+    let sizes = [area, volume];
+    return sizes;
+}
+
+let areaOne = getSize(3, 2, 3)[0];
+let volumeOne = getSize(3, 2, 3)[1];
+
+console.log(areaOne);
+console.log(volumeOne);
+console.log(getSize(3, 2, 3));*/
+
+
+
+
+
+    </script>
+</body>
+</html>

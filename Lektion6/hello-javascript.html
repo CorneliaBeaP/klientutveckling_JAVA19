@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Javascript</h1>
+    <h2 id="demo"></h2>
+
+    <script>
+   let text1 = `hejhej`;
+   console.log(text1);
+   document.write("hejhej:)");
+   let h2 = document.getElementById('demo');
+   console.log(h2);
+   h2.innerHTML = "Hello from javascript"
+   document.getElementById('demo').innerHTML = "Hej från Javascript";
+
+   let name = prompt("Vad heter du?", "Ange ditt namn");
+   console.log("Hej " + name);
+
+    </script>
+
+</body>
+</html>
