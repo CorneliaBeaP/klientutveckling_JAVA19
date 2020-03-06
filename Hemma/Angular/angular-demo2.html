@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <!-- <h1 ng-controller="myCtrl">
+        {{ firstName + " " + lastName }}
+    </h1> -->
+
+<div ng-init="names=['Cornelia', 'Camilla', 'Marten', 'Per', 'Conny', 'Carmen', 'Mia', 'Petter', 'Anna', 'Arnold']"></div>
+<div ng-init="namein=''">
+    <input type="text" ng-model="namein">
+
+    Filter: {{namein}}
+    <div ng-repeat="name in names | filter: {{namein}}">
+    
+        {{name}}
+    </div>
+ 
+</div>
+
+
+
+    
+
+    <script src="angular.js"></script>
+    <script>
+        let myApp = angular.module("myApp", []);
+        myApp.controller("myCtrl", function($scope){
+            // $scope.firstName = "Cornelia";
+            // $scope.lastName = "P";
+        });
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Local Storage Demo</h1>
+
+    <table id="table"></table>
+
+
+    <script>
+
+        console.log(localStorage);
+
+
+
+        localStorage.setItem("Name", "Cornelia");
+        localStorage.setItem("Email", "Corneliap@live.se");
+
+
+        let name = localStorage.getItem("Name");
+        console.log(name);
+
+        console.log(localStorage.key(0));
+
+        for (let i = 0; i < localStorage.length; i++) {
+
+            console.log("Key: " + localStorage.key(i));
+            console.log("Värde: " + localStorage.getItem(localStorage.key(i)));
+
+
+        }
+
+
+
+
+        let table = '<table> <tr><th>Key</th><th>Value</th></tr>';
+
+        for (let i = 0; i < localStorage.length; i++) {
+            table += '<tr><td>' + localStorage.key(i) + '</td><td>' + localStorage.getItem(localStorage.key(i)) + '</td> <tr>';
+
+        }
+
+        table += '</table>';
+        document.getElementById('table').innerHTML = table;
+
+
+        //rensa allt som finns i localstorage
+        // localStorage.clear();
+
+        //Lagra en array i localstorage
+        const array = ['Ett', 'Två', 'Tre'];
+
+        localStorage.setItem('myArray', JSON.stringify(array));
+
+        const array2 = JSON.parse(localStorage.getItem('myArray'));
+        console.log(localStorage);
+        array2.forEach(element => {
+            console.log(element);
+            
+        });
+
+        const person = {
+name : "Cornelia",
+age : 26
+        }
+
+        localStorage.setItem('person', JSON.stringify(person));
+
+const person2 = JSON.parse(localStorage.getItem('person'));
+console.log(person2);
+
+
+
+    </script>
+</body>
+
+</html>
